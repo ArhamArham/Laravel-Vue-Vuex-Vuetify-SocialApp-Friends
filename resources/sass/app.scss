@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+@import url('https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css');
+@import '~vuetify/dist/vuetify.css';
+
+.app_name{
+    text-decoration: none;
+}
+.app_name span{
+    color: white;
+
+}
+.editCom{
+    margin-left: 4px !important;
+    width:80%
+}
+.editCom:focus{
+    outline: none;
+}
+.search{
+    position: absolute;
+    top: 14px;
+    margin-left: 110px;
+    width: 30%;
+}
+.hover:hover{
+    cursor: pointer;
+}
