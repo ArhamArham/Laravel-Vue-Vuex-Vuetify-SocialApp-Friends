@@ -18,7 +18,7 @@ class User extends Authenticatable implements Searchable
      * @var array
      */
     protected $guarded=[];
-
+protected $primaryKey = 'id';
     /**
      * The attributes that should be hidden for arrays.
      *
