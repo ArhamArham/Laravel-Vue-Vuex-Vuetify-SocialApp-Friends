@@ -24,7 +24,7 @@
                         <v-img
                             width="50"
                             height="50"
-                            :src="search.searchable.profile.thumbnail"
+                            :src="search.profile.thumbnail"
                         ><template v-slot:placeholder>
                             <v-row
                                 class="fill-height ma-0"
@@ -40,7 +40,7 @@
                         </v-img>
                     </div>
                     <div class="">
-                        <v-card-text @click="redirectProfile(search.url)">{{ search.title }}</v-card-text>
+                        <v-card-text @click="redirectProfile(search.id)">{{ search.name }}</v-card-text>
                     </div>
                 </v-row>
                 </v-container>
@@ -177,8 +177,6 @@
 
 <script>
 import { mapState } from "vuex";
-import VueAvatar from "vue-avatar-editor/src/components/VueAvatar";
-import VueAvatarScale from "vue-avatar-editor/src/components/VueAvatarScale";
 import { clipperBasic, clipperPreview, clipperUpload } from "vuejs-clipper";
 export default {
     props: ["post"],
@@ -240,6 +238,8 @@ export default {
                     })
                     .then(response => {
                         this.searchBox=true
+                        console.log(response.data);
+                        
                         this.searchData = response.data;
                     })
                     .catch(error => {

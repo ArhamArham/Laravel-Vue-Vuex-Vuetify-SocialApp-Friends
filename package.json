@@ -26,13 +26,8 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "@mdi/js": "^5.3.45",
         "dayjs": "^1.8.28",
         "rx-js": "0.0.0",
-        "vue-advanced-cropper": "^0.16.5",
-        "vue-avatar-cropper": "^1.0.6",
-        "vue-avatar-editor": "^1.0.4",
-        "vue-avatar-editor-improved": "^1.0.5",
         "vue-content-loader": "^0.2.3",
         "vue-infinite-loading": "^2.4.5",
         "vue-router": "^3.3.3",

@@ -14,13 +14,7 @@ class SearchController extends Controller
  
         $searchterm = $request->input('query');
  
-        $searchResults = (new Search())
-                    ->registerModel(User::class, function(ModelSearchAspect $modelSearchAspect){
-                        $modelSearchAspect
-                           ->addSearchableAttribute('name') 
-                           ->with('profile');
-                    })->perform($searchterm);
- 		return $searchResults;
-                    
+        $user=User::where('name','LIKE','%'.$searchterm.'%')->orWhere('email','LIKE','%'.$searchterm.'%')->with('profile')->get();
+        return $user;
     }
 }

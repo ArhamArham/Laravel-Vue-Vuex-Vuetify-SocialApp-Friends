@@ -4,11 +4,9 @@ namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Spatie\Searchable\Searchable;
-use Spatie\Searchable\SearchResult;     
+use Illuminate\Notifications\Notifiable; 
 
-class User extends Authenticatable implements Searchable
+class User extends Authenticatable
 {
     use Notifiable;
 
@@ -18,7 +16,6 @@ class User extends Authenticatable implements Searchable
      * @var array
      */
     protected $guarded=[];
-protected $primaryKey = 'id';
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -46,15 +43,5 @@ protected $primaryKey = 'id';
     }
     public function posts(){
         return $this->hasMany('App\Post')->orderBy('created_at','desc');
-    }
-    public function getSearchResult(): SearchResult
-    {
-        $url = route('profile.show', $this->id);
- 
-        return new SearchResult(
-            $this,
-            $this->name,
-            $this->id,
-        );  
     }
 }
