@@ -19,7 +19,7 @@ class SearchController extends Controller
                         $modelSearchAspect
                            ->addSearchableAttribute('name') 
                            ->with('profile');
-                    })->search($searchterm);
+                    })->perform($searchterm);
  		return $searchResults;
                     
     }
