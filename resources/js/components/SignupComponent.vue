@@ -21,7 +21,7 @@
                     v-model="signupData.name"
                     :color='color'
                     label="Name"
-                    prepend-icon="mdi-account"
+                    prepend-icon="mdi-account-outline"
                     type="text"
                     :rules="[rules.required,rules.min]"
                   ></v-text-field>
@@ -32,7 +32,7 @@
                     :success-messages="email_success"
                     :error-messages="email_error"
                     @blur="checkEmail"
-                    prepend-icon="mdi-account"
+                    prepend-icon="mdi-account-outline"
                     type="text"
                     :rules="[rules.required,rules.validEmail]"
                   ></v-text-field>
@@ -43,7 +43,7 @@
                     id="password"
                     label="Password"
                     name="password"
-                    prepend-icon="mdi-lock"
+                    prepend-icon="mdi-lock-outline"
                     :rules="[rules.required,rules.min]"
                     type="password"
                   ></v-text-field>
@@ -53,7 +53,7 @@
                     id="password"
                     label="Retype Password"
                     name="password"
-                    prepend-icon="mdi-lock"
+                    prepend-icon="mdi-lock-outline"
                     :rules="[rules.required,passwordMatch]"
                     type="password"
                     v-on:keyup.enter="onEnter"
@@ -81,6 +81,9 @@
         </v-row>
       </v-container>
     </v-main>
+    <div class="mx-auto">
+      <p >Copyrights © <strong >abrsoftwaretechnologies@gmail.com </strong>All Rights Reserved</p>
+    </div>
   </v-app>
 </template>
 

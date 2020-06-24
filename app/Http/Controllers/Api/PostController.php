@@ -23,7 +23,7 @@ class PostController extends Controller
 
     public function index(Request $request)
     {   
-        $ids = [];
+        $ids = [$request->user()->id];
         foreach ($request->user()->follows as $id) {
             $ids[] = $id->id;
         }

@@ -25,7 +25,7 @@
                     tabindex="1"
                     :rules="emailRules"
                     required
-                    prepend-icon="mdi-account-circle-outline"
+                    prepend-icon="mdi-account-outline"
                     type="text"
                   />
 
@@ -37,7 +37,7 @@
                     :rules="passwordRules"
                     tabindex="2"
                     name="password"
-                    prepend-icon="mdi-account-lock-outline"
+                    prepend-icon="mdi-lock-outline"
                     type="password"
                     required
                     v-on:keyup.enter="onEnter"
@@ -73,6 +73,9 @@
         </v-row>
       </v-container>
     </v-content>
+    <div class="mx-auto">
+      <p >Copyrights © <strong >abrsoftwaretechnologies@gmail.com </strong>All Rights Reserved</p>
+    </div>
   </v-app>
 </template>
 
@@ -82,7 +85,6 @@ export default {
   data() {
     return {
       valid: true,
-
       emailRules: [
         v => !!v || "E-mail is required",
         v => /.+@.+\..+/.test(v) || "E-mail must be valid"
@@ -99,6 +101,7 @@ export default {
     };
   },
   created() {
+    
     if (localStorage.getItem("theme") == "false") {
       this.$vuetify.theme.dark = false;
     }
